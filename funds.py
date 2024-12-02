@@ -15,7 +15,7 @@ stocks = ["AAPL", "META", "NVDA", "AMZN", "MSFT", "SHOP", "TSLA", "GOOG", "AVGO"
 file_path = "data.xlsx"
 
 # backup file
-backup_path = "backup_" + datetime.datetime.strftime(datetime.datetime.now(),'%d-%m-%Y') + ".xlsx"
+backup_path = "backup_" + datetime.datetime.strftime(datetime.datetime.now(),'%Y-%m-%dT%H-%M-%SZ') + ".xlsx"
 shutil.copyfile(file_path, backup_path)
 
 df = pd.read_excel(file_path, engine="openpyxl")
@@ -59,7 +59,7 @@ for fund in funds:
     df = add_data(df, name, symbol, price)
     print("df after add_data", df)
 
-# Get stocks' data
+# Get stocks' data using requests+BeautifulSoup
 # for stock in stocks:
 #     headers = {'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/114.0'}
 #     url = "https://ca.finance.yahoo.com/quote/" + stock + "/"

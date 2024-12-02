@@ -8,7 +8,7 @@ Stock and Funds price crawler
 `pip install selenium`
 
 ## Run
-`python .\fundsAndStocks.py`
+`python .\main.py`
 
 Funds:
 https://www.theglobeandmail.com/investing/markets/funds/RBF263.CF/performance/
