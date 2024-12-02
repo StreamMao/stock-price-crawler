@@ -74,4 +74,4 @@ for stock in stocks:
     df = add_data(df, name, symbol, price)
     
 print(df)
-# df.to_excel('data.xlsx', index=False)
+df.to_excel('data.xlsx', index=False)

@@ -60,27 +60,27 @@ for fund in funds:
     print("df after add_data", df)
 
 # Get stocks' data
-for stock in stocks:
-    headers = {'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/114.0'}
-    url = "https://ca.finance.yahoo.com/quote/" + stock + "/"
+# for stock in stocks:
+#     headers = {'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/114.0'}
+#     url = "https://ca.finance.yahoo.com/quote/" + stock + "/"
 
-    response = requests.get(url, headers=headers)
+#     response = requests.get(url, headers=headers)
 
-    # html = urlopen(url).read()
-    soup = BeautifulSoup(response.text, "html.parser")
+#     # html = urlopen(url).read()
+#     soup = BeautifulSoup(response.text, "html.parser")
 
-    headerElement = soup.find("h1",{"class": "yf-xxbei9"})
-    foundElement = soup.find("fin-streamer",{"data-testid": "qsp-price"})
+#     headerElement = soup.find("h1",{"class": "yf-xxbei9"})
+#     foundElement = soup.find("fin-streamer",{"data-testid": "qsp-price"})
     
-    # print("headerElement", headerElement)
-    # print("foundElement", foundElement)
+#     # print("headerElement", headerElement)
+#     # print("foundElement", foundElement)
     
-    # print(df)
-    name = headerElement.text
-    symbol = foundElement["data-symbol"]
-    price = foundElement["data-value"]
+#     # print(df)
+#     name = headerElement.text
+#     symbol = foundElement["data-symbol"]
+#     price = foundElement["data-value"]
 
-    df = add_data(df, name, symbol, price)
+#     df = add_data(df, name, symbol, price)
     
 print(df)
 df.to_excel(file_path, index=False)
