@@ -4,7 +4,7 @@ Stock and Funds price crawler
 ## Install dependencies
 `pip install beautifulsoup4` \
 `pip install pandas` \
-`pip install openpyxl`
+`pip install openpyxl`\
 `pip install selenium`
 
 ## Run
