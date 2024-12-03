@@ -45,7 +45,7 @@ for stock in stocks:
 
     DRIVER_PATH = './utils/chromedriver.exe'
     # initialize an instance of the chrome driver (browser)
-    driver = webdriver.Chrome(executable_path=DRIVER_PATH)
+    driver = webdriver.Chrome()
 
     # visit your target site
     driver.get(url)
